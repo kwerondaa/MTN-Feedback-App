@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie = edge">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>How did we do?</title>
+</head>
+<body>
+    <div class="container">
+        <img src="../static/MTN-Logo.png" alt="MTN" class="logo">
+        {% if message %}
+        <p class="message">{{message | safe}}</p>
+        {% endif %}
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <h3>Customer Name</h3>
+                <input
+                type="text"
+                name = "customer"
+                placeholder="Name of sim holder" 
+                />
+            </div>
+
+            <div class="form-group">
+                <h3>Dealer</h3>
+                <select name = "dealer">
+                    <option value="">Select Dealer</option>
+                    <option value="Mugume Joshua">Mugume Joshua</option>
+                    <option value="Mubiru Emma">Mubiru Emma</option>
+                    <option value="Amanya Ken">Amanya Ken</option>
+                    <option value="Latif Juma">Latif Juma</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h3>Please rate your attendant</h3>
+                <input type="radio" name= "rating" value="1"/>1
+                <input type="radio" name= "rating" value="2"/>2
+                <input type="radio" name= "rating" value="3"/>3
+                <input type="radio" name= "rating" value="4"/>4
+                <input type="radio" name= "rating" value="5"/>5
+                <input type="radio" name= "rating" value="6"/>6
+                <input type="radio" name= "rating" value="7"/>7
+                <input type="radio" name= "rating" value="8"/>8
+                <input type="radio" name= "rating" value="9"/>9
+                <input type="radio" name= "rating" value="10" checked/>10
+            </div>
+            <div class="form-group">
+                <h3>Please comment about your experience</h3>
+                <textarea name="comments" id="" cols="30" rows="10" placeholder="Tell us about your eperience in detail" ></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Submit" class="btn" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
